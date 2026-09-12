@@ -37,12 +37,6 @@ git clone https://github.com/your-username/procrastination-timer.git
 cd procrastination-timer
 # Run
 Open index.html in any web browser, or serve locally using Python:
-### Project Documentation
-For Software:
-
-# Screenshots
-<img width="1280" height="640" alt="git (1)" src=
-*Project interface *
 
 ## Team Contributions
 - Adwaith viji
