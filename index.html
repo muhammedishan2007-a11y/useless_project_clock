@@ -1,1 +1,50 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0f172a">
+  <meta name="description" content="The world's premier timer for tracking successful avoidance of actual work.">
+  <title>The Procrastination Timer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="scanlines" aria-hidden="true"></div>
+  <div class="alert" id="urgencyAlert" role="alert" aria-live="assertive"><strong id="alertTitle">!! WARNING: Work detected !!</strong><span id="alertMessage">Close your productivity tools immediately to save your idle streak!</span></div>
+  <header class="site-header shell">
+    <a class="brand" href="#top" aria-label="The Procrastination Timer home"><span class="brand-mark">Z</span><span>The Procrastination Timer</span></a>
+    <nav aria-label="Primary navigation"><a href="#timer">Command center</a><a href="#achievements">Badges</a></nav>
+  </header>
+  <main id="top">
+    <section class="hero shell" aria-labelledby="hero-title">
+      <div class="eyebrow">Est. whenever you should be working</div>
+      <h1 id="hero-title">Turn doing nothing into a <em>competitive sport.</em></h1>
+      <p class="hero-copy">The world's premier timer for tracking your unproductivity and celebrating idle achievements. Finally, a dashboard for the work you didn't do.</p>
+      <div class="hero-actions"><a class="button button-primary" href="#timer">Start procrastinating <span aria-hidden="true">&darr;</span></a><a class="button button-quiet" href="#achievements">View your excuses</a></div>
+      <dl class="hero-stats" aria-label="Lifetime statistics"><div><dt id="heroLifetime">0m</dt><dd>minutes wasted</dd></div><div><dt id="heroSessions">0</dt><dd>sessions avoided</dd></div><div><dt id="heroBadges">0/6</dt><dd>badges earned</dd></div></dl>
+    </section>
+    <section class="command-section shell" id="timer" aria-labelledby="timer-title">
+      <div class="section-heading"><div><div class="eyebrow">Your productivity-free command center</div><h2 id="timer-title">Procrastination mode</h2></div><div class="live-status"><span class="live-dot" id="liveDot"></span><span id="modeLabel">standby</span></div></div>
+      <div class="dashboard-grid">
+        <article class="timer-card panel"><div><div class="timer-meta"><span class="eyebrow">Current idle streak</span><span class="session-label" id="sessionLabel">session #01</span></div><div class="timer-display" id="timerDisplay" aria-live="polite">00:00:00</div><p class="timer-status" id="statusText">Just getting started. Pace yourself.</p></div><div><div class="timer-actions"><button class="button button-primary" id="startButton" type="button">Start procrastinating</button><button class="button button-secondary" id="stopButton" type="button" disabled>Give up &amp; work</button></div><label class="fast-toggle"><input type="checkbox" id="fastMode"><span class="toggle-track" aria-hidden="true"><span></span></span><span>Demo mode <small>1 second = 1 minute</small></span></label></div></article>
+        <aside class="side-stack" aria-label="Timer tools">
+          <article class="panel tool-card alarm-card"><div class="card-heading"><div><div class="eyebrow">Optional, but dramatic</div><h3>Actual alarm clock</h3></div><span class="tool-icon" aria-hidden="true">!</span></div><div class="alarm-controls"><label for="alarmInput">Wake-up time</label><input type="time" id="alarmInput"><div class="alarm-buttons"><button class="button button-danger" id="setAlarmButton" type="button">Set alarm</button><button class="button button-secondary" id="stopAlarmButton" type="button" disabled>Stop alarm</button></div><p class="alarm-status" id="alarmStatus">No alarm set. Give yourself a deadline to ignore.</p><p class="alarm-result" id="alarmResult"></p><div class="alarm-history"><div class="history-label">Recorded stop times</div><ol id="alarmHistory"><li>No alarm responses recorded yet.</li></ol></div></div></article>
+          <article class="panel tool-card"><div class="card-heading"><div><div class="eyebrow">Return with consequences</div><h3>Fake urgency mode</h3></div><label class="switch"><input type="checkbox" id="urgencyToggle"><span class="slider"></span></label></div><p class="tool-copy">Flash a warning when you leave and return to this tab.</p></article>
+          <article class="panel tool-card"><div class="card-heading"><div><div class="eyebrow">A totally real breakdown</div><h3>Where your time went</h3></div></div><div class="chart"><div class="donut" aria-label="40 percent Wikipedia rabbit holes, 35 percent reorganizing desk, 25 percent staring into space"></div><ul class="legend"><li>Wikipedia rabbit holes <strong>40%</strong></li><li>Reorganizing desk <strong>35%</strong></li><li>Staring into space <strong>25%</strong></li></ul></div></article>
+        </aside>
+      </div>
+    </section>
+    <section class="progress-section shell" aria-labelledby="progress-title"><div class="section-heading"><div><div class="eyebrow">The next questionable milestone</div><h2 id="progress-title">Progress to your next badge</h2></div><span class="progress-value" id="progressLabel">0 / 1 min</span></div><div class="progress-track" id="progressTrack" role="progressbar" aria-label="Progress to next badge" aria-valuemin="0" aria-valuemax="60" aria-valuenow="0"><span id="progressBar"></span></div><p class="progress-copy" id="progressCopy">Start a session to begin accumulating completely non-transferable status.</p></section>
+    <section class="badges-section shell" id="achievements" aria-labelledby="badges-title"><div class="eyebrow">Idle achievement system</div><h2 id="badges-title">Badges worth absolutely nothing.</h2><div class="badge-grid" id="badgeGrid"></div></section>
+    <section class="voices shell" aria-labelledby="voices-title"><div class="eyebrow">Peer-reviewed avoidance</div><h2 id="voices-title">What the community is saying</h2><div class="quote-grid"><blockquote>“Thanks to Procrastination Timer, I delayed my taxes until next tax season!”<cite>— Jamie, professional delayer</cite></blockquote><blockquote>“My boss asked what I achieved. I showed her my 47-minute streak.”<cite>— Morgan, strategy consultant</cite></blockquote><blockquote>“It is the most productive use of my unproductivity.”<cite>— Casey, founder of a tab empire</cite></blockquote></div></section>
+    <section class="stats-section shell" aria-labelledby="stats-title"><div class="section-heading"><div><div class="eyebrow">A report nobody requested</div><h2 id="stats-title">Lifetime damage</h2></div><button class="button button-danger-outline" id="resetButton" type="button">Reset all data</button></div><div class="stats-grid"><div class="stat-card"><span class="stat-icon">TIME</span><strong id="lifetimeStat">0m</strong><span>total minutes wasted</span></div><div class="stat-card"><span class="stat-icon">BEST</span><strong id="bestStat">00:00:00</strong><span>longest single session</span></div><div class="stat-card"><span class="stat-icon">RUNS</span><strong id="sessionStat">0</strong><span>sessions successfully avoided</span></div></div></section>
+  </main>
+  <div class="toast" id="toast" role="status" aria-live="polite"><span class="toast-icon">+</span><div><strong>Achievement unlocked</strong><span id="toastText"></span></div></div>
+  <footer class="site-footer shell">The Procrastination Timer &copy; 2026. No actual work was completed in the making of this app.</footer>
+  <script src="app.js"></script>
+</body>
+</html>
